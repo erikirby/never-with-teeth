@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>&#8216;Never With Teeth&#8217;: Inside the Hollywood Smear Machine</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --chelt: "nyt-cheltenham", georgia, "times new roman", times, serif;
+    --imperial: "nyt-imperial", georgia, "times new roman", times, serif;
+    --franklin: "nyt-franklin", arial, helvetica, sans-serif;
+  }
+
+  body {
+    font-family: var(--imperial);
+    color: #222;
+    background: #fff;
+    line-height: 1.7;
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Masthead ── */
+  .nyt-masthead {
+    border-top: 3px solid #121212;
+    padding: 0 20px;
+  }
+  .nyt-masthead-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 9px;
+  }
+  .nyt-nav-side {
+    font-family: var(--franklin);
+    font-size: 11px;
+    color: #727272;
+    letter-spacing: 0.04em;
+    min-width: 140px;
+  }
+  .nyt-nav-right { text-align: right; }
+  .nyt-wordmark {
+    font-family: var(--chelt);
+    font-size: 30px;
+    font-weight: 700;
+    color: #121212;
+    letter-spacing: -0.5px;
+    text-align: center;
+    flex: 1;
+  }
+  .nyt-masthead-rule {
+    border: none;
+    border-top: 1px solid #e2e2e2;
+    margin: 0;
+  }
+  .nyt-section-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6px 20px;
+    font-family: var(--franklin);
+    font-size: 11px;
+    color: #727272;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e2e2e2;
+  }
+
+  /* ── Article header ── */
+  .article-header {
+    max-width: 630px;
+    margin: 0 auto;
+    padding: 50px 20px 15px;
+    text-align: left;
+  }
+  .article-header .kicker {
+    font-family: var(--franklin);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #121212;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #121212;
+    display: inline-block;
+  }
+  .article-header h1 {
+    font-family: var(--chelt);
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: #121212;
+    margin-bottom: 22px;
+  }
+  .article-header .summary {
+    font-family: var(--imperial);
+    font-size: 20px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .article-header .byline {
+    font-family: var(--franklin);
+    font-size: 14px;
+    font-weight: 600;
+    color: #121212;
+    margin-bottom: 3px;
+  }
+  .article-header .byline a { color: #121212; text-decoration: underline; text-underline-offset: 2px; }
+  .article-header .dateline {
+    font-family: var(--franklin);
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .article-header .read-time {
+    font-family: var(--franklin);
+    font-size: 12px;
+    color: #bbb;
+    margin-bottom: 35px;
+  }
+
+  /* ── Lead image ── */
+  .lead-image {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .lead-image img { width: 100%; display: block; }
+  .lead-image .caption {
+    max-width: 630px;
+    margin: 7px auto 0;
+    padding: 0 20px;
+    font-family: var(--franklin);
+    font-size: 13px;
+    line-height: 1.5;
+    color: #777;
+  }
+  .lead-image .caption .credit {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: #bbb;
+  }
+
+  /* ── Article body ── */
+  .article-body {
+    max-width: 630px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .article-body p {
+    margin-bottom: 1.5em;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #222;
+  }
+  .article-body .section-head {
+    font-family: var(--chelt);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #121212;
+    margin: 42px 0 18px;
+  }
+  hr.section-break {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 42px auto;
+    max-width: 630px;
+    width: 55px;
+  }
+
+  /* ── Text message bubbles ── */
+  .message-container {
+    max-width: 390px;
+    margin: 32px auto;
+  }
+  .message-container .msg-label {
+    font-family: var(--franklin);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .msg-bubble { margin: 0 0 10px; }
+  .msg-bubble .name {
+    display: block;
+    text-transform: uppercase;
+    font-family: var(--franklin);
+    font-size: 10px;
+    padding: 14px 0 6px;
+    letter-spacing: 0.5px;
+    color: #727272;
+  }
+  .msg-bubble .text {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: var(--franklin);
+    font-size: 15px;
+    line-height: 1.35;
+    letter-spacing: 0.025em;
+    max-width: 17rem;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+  }
+  .msg-bubble.received { text-align: left; }
+  .msg-bubble.received .text {
+    background: #e2e2e2;
+    color: rgba(0,0,0,0.75);
+    border-top-left-radius: 5px;
+    text-align: left;
+  }
+  .msg-bubble.sent { text-align: right; margin-right: 0; margin-left: auto; }
+  .msg-bubble.sent .name { text-align: right; }
+  .msg-bubble.sent .text {
+    background: #6aa09c;
+    color: #fff;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: left;
+    border-top-right-radius: 5px;
+  }
+  .msg-edit {
+    font-family: var(--franklin);
+    font-size: 11px;
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    margin-top: 6px;
+    line-height: 1.6;
+  }
+  @media (min-width: 600px) {
+    .message-container { max-width: 520px; }
+    .msg-bubble .text {
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 18px;
+      line-height: 1.388;
+      max-width: 22rem;
+    }
+    .msg-bubble.sent .text { border-top-right-radius: 5px; }
+    .msg-bubble.received .text { border-top-left-radius: 5px; }
+  }
+
+  /* ── Inline images ── */
+  .inline-image { margin: 36px 0; }
+  .inline-image img { width: 100%; display: block; border-radius: 2px; }
+  .inline-image .caption {
+    margin-top: 7px;
+    font-family: var(--franklin);
+    font-size: 13px;
+    line-height: 1.5;
+    color: #777;
+  }
+  .inline-image .caption .credit {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: #bbb;
+  }
+
+  /* ── Pull quote ── */
+  .pull-quote {
+    font-family: var(--chelt);
+    font-size: 26px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.35;
+    color: #121212;
+    padding: 28px 0;
+    margin: 36px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+  .pull-quote .attribution {
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+    font-family: var(--franklin);
+    font-weight: 400;
+    color: #999;
+    margin-top: 12px;
+  }
+
+  /* ── Document exhibit ── */
+  .doc-exhibit {
+    margin: 28px 0;
+    padding: 20px 28px;
+    border-left: 3px solid #ccc;
+    font-family: var(--imperial);
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    background: #f9f9f9;
+  }
+  .doc-exhibit .doc-label {
+    font-family: var(--franklin);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #bbb;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .doc-exhibit .doc-note {
+    font-family: var(--franklin);
+    font-size: 11px;
+    color: #999;
+    font-style: italic;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  /* ── Disclaimer ── */
+  .disclaimer {
+    max-width: 630px;
+    margin: 40px auto;
+    padding: 16px 20px;
+    border-top: 1px solid #ddd;
+    font-family: var(--franklin);
+    font-size: 11px;
+    color: #ccc;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 600px) {
+    .nyt-wordmark { font-size: 22px; }
+    .nyt-nav-side { display: none; }
+    .article-header h1 { font-size: 30px; }
+    .article-body p { font-size: 18px; }
+    .article-body .section-head { font-size: 21px; }
+    .pull-quote { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nyt-masthead">
+  <div class="nyt-masthead-inner">
+    <div class="nyt-nav-side">Sections &nbsp;&#124;&nbsp; Home &nbsp;&#124;&nbsp; Search</div>
+    <div class="nyt-wordmark">The New York Times</div>
+    <div class="nyt-nav-side nyt-nav-right">Log In &nbsp;&#124;&nbsp; Subscribe</div>
+  </div>
+</div>
+<hr class="nyt-masthead-rule">
+<div class="nyt-section-bar">Business &nbsp;&rsaquo;&nbsp; Media</div>
+
+<header class="article-header">
+  <div class="kicker">Investigation</div>
+  <h1>&#8216;Never With Teeth&#8217;: Inside the Hollywood Smear Machine</h1>
+  <p class="summary">Court documents and private messages detail how a campaign to destroy a director&#8217;s reputation was assembled by his co-star &#8212; while she was still assuring him that her flirtatious texts were her &#8220;love language.&#8221;</p>
+  <p class="byline">By <a href="#">Megan Three-Ey</a>, <a href="#">Mike McIntire</a> and <a href="#">Julie Tate</a></p>
+  <p class="dateline">May 21, 2026</p>
+  <p class="read-time">3,021 words</p>
+</header>
+
+<div class="lead-image">
+  <img src="coverimage.jpg" alt="Blake Lively and Justin Baldoni at the It Ends With Us premiere">
+  <p class="caption"><span class="credit">Credit...</span> Ms. Lively and Mr. Baldoni at the New York premiere of &#8220;It Ends With Us&#8221; in August 2024. In private messages filed in court that same month, she was describing him to the author of the novel as a &#8220;rabid pig.&#8221;</p>
+</div>
+
+<div class="article-body">
+
+<p>In the spring of 2023, during the filming of &#8220;It Ends With Us&#8221; in New Jersey, Blake Lively sent her director a text message about what she described as her natural way of relating to people.</p>
+
+<div class="message-container">
+  <div class="msg-label">Text Messages</div>
+  <div class="msg-bubble sent">
+    <span class="name">Blake Lively</span>
+    <span class="text">If you knew me (in person) longer you&#8217;d have a sense of how flirty and yummy the ball busting will play. It&#8217;s my love language.</span>
+  </div>
+  <div class="msg-bubble sent">
+    <span class="name">Blake Lively</span>
+    <span class="text">Spicy and playfully bold. Never with teeth.</span>
+  </div>
+  <div class="msg-edit">Ms. Lively to Mr. Baldoni, spring 2023. Introduced as evidence in Wayfarer Studios&#8217; countersuit filings; unsealed by the Southern District of New York, January 2026. Messages have been edited for length.</div>
+</div>
+
+<p>Less than two years later, she accused him of sexual harassment. In between, she described him privately as &#8220;a rabid pig,&#8221; coached co-stars on what to say to producers in the middle of the night, arranged for the author of the source novel to publicly sever her association with him, and emailed one of Hollywood&#8217;s most powerful producers to say that everyone Mr. Baldoni had hired &#8220;is in a cult.&#8221;</p>
+
+<p>In April 2026, a federal judge dismissed ten of her thirteen claims &#8212; including the allegation of sexual harassment.</p>
+
+<p>What follows is a reconstruction of what happened in between, drawn from court filings, sworn depositions, and private messages entered into the public record.</p>
+
+<hr class="section-break">
+
+<p class="section-head">&#8216;She Had the Nuclear Bomb&#8217;</p>
+
+<p>Ms. Lively, 37, came into &#8220;It Ends With Us&#8221; with advantages that were not subtle. She had built her career through &#8220;Gossip Girl,&#8221; &#8220;The Town,&#8221; and &#8220;A Simple Favor,&#8221; and had parlayed it into businesses, magazine covers, and more than 45 million Instagram followers. She was married to Ryan Reynolds, whose &#8220;Deadpool&#8221; franchise had made him one of the highest-paid actors in Hollywood. Taylor Swift was among her closest friends.</p>
+
+<p>Mr. Baldoni, 40, was best known for the CW series &#8220;Jane the Virgin.&#8221; He co-chaired the studio producing the film and had cultivated a public identity around TED talks on masculinity. He understood, precisely, where the power resided. In a private text to his producer, Jamey Heath, he laid it out plainly.</p>
+
+<div class="message-container">
+  <div class="msg-label">Text Messages</div>
+  <div class="msg-bubble received">
+    <span class="name">Justin Baldoni</span>
+    <span class="text">She had the nuclear bomb. If she doesn&#8217;t promote the movie she can leak that I&#8217;m a bad person or that she felt unsafe with me and &#8220;all the stuff&#8221; she has on me. The risk to my family isn&#8217;t worth the creative integrity.</span>
+  </div>
+  <div class="msg-edit">Mr. Baldoni to Jamey Heath, summer 2024. Disclosed in Lively v. Wayfarer Studios et al., S.D.N.Y. Messages have been edited for length.</div>
+</div>
+
+<p>He was right about the bomb. He was wrong that it had not already gone off.</p>
+
+<hr class="section-break">
+
+<p class="section-head">&#8216;My Love Language&#8217;</p>
+
+<p>In November 2023, on the same day the SAG-AFTRA strike ended and production was prepared to resume, a letter arrived from Ms. Lively&#8217;s legal team. It contained a list of non-negotiable conditions for her return to set. There were seventeen of them.</p>
+
+<p>Wayfarer had spent months and millions waiting out the strike. The distributor was counting on a finished film. A January meeting followed, attended by Ms. Lively and her husband. Mr. Reynolds had not directed, produced, or appeared in the film. He took a seat at the conference table.</p>
+
+<p>With no viable alternative, the studio signed. The document they signed &#8212; framed, in its tone and content, as a response to alleged misconduct during filming &#8212; would later become a cornerstone of Ms. Lively&#8217;s legal case. At the time they signed it, neither Mr. Baldoni nor Mr. Heath had been told what specific complaint they were responding to, nor given an opportunity to answer one.</p>
+
+<hr class="section-break">
+
+<p class="section-head">&#8216;A Rabid Pig&#8217;</p>
+
+<p>Through the summer of 2024, Ms. Lively and Mr. Baldoni appeared together at premieres and sat for joint interviews. In private, the record shows a different posture entirely.</p>
+
+<p>In messages on July 11, 2024, to Colleen Hoover, the novelist whose book had made the film possible, Ms. Lively expressed certainty about her standing in any dispute that might follow.</p>
+
+<div class="message-container">
+  <div class="msg-label">Text Messages — July 11, 2024</div>
+  <div class="msg-bubble sent">
+    <span class="name">Blake Lively</span>
+    <span class="text">I literally don&#8217;t know a single thing I&#8217;ve done that he can smear me about.</span>
+  </div>
+  <div class="msg-edit">Ms. Lively to Colleen Hoover, July 11, 2024. Introduced in Mr. Baldoni&#8217;s countersuit filings, 2025. Messages have been edited for length.</div>
+</div>
+
+<p>In the same exchange, she was describing Mr. Baldoni to Ms. Hoover as &#8220;a rabid pig.&#8221;</p>
+
+<div class="inline-image">
+  <img src="It-Ends-With-Us-2023-Blake-Lively-Patchwork-Jacket.jpg" alt="Blake Lively on set of It Ends With Us">
+  <p class="caption"><span class="credit">Credit...</span> Ms. Lively on the set of &#8220;It Ends With Us&#8221; in New Jersey, 2023.</p>
+</div>
+
+<p>What the private record shows, across the months before any complaint was filed, is a deliberate effort to turn the film&#8217;s own cast into a set of aligned witnesses. It moved one person at a time.</p>
+
+<p>Ms. Lively had begun with Jenny Slate, who played a supporting role in the film. She told Ms. Slate that she had sensed something troubling in Mr. Baldoni from the beginning and was &#8220;aware of a general vibe that I&#8217;m not into.&#8221; Text messages show her sending Ms. Slate specific talking points before a meeting with a producer &#8212; at 12:36 a.m. &#8212; with instructions on how to frame her concerns to a third party. Ms. Slate announced her public support for Ms. Lively on the day the complaint was filed.</p>
+
+<p>Her co-star Brandon Sklenar was similarly engaged. In messages unsealed by a federal court in January 2026, Ms. Lively informed him of how she viewed the situation and what she believed the film&#8217;s narrative should be.</p>
+
+<div class="message-container">
+  <div class="msg-label">Text Messages</div>
+  <div class="msg-bubble sent">
+    <span class="name">Blake Lively</span>
+    <span class="text">Bc I&#8217;m not selling this movie on him. He&#8217;s really good in it. I made sure of it. But he&#8217;s the abuser, and it shouldn&#8217;t be centered on him.</span>
+  </div>
+  <div class="msg-edit">Ms. Lively to Brandon Sklenar, summer 2024. Unsealed by the Southern District of New York, January 2026. Messages have been edited for length.</div>
+</div>
+
+<p>In the same exchange, Ms. Lively described a comment Mr. Baldoni had allegedly made to Mr. Sklenar on set &#8212; in complete, verbatim detail &#8212; and then asked whether he remembered it.</p>
+
+<div class="message-container">
+  <div class="msg-label">Text Messages</div>
+  <div class="msg-bubble sent">
+    <span class="name">Blake Lively</span>
+    <span class="text">He said something hushed to you on set at Root, but I didn&#8217;t hear the rest, he said &#8220;oh man I have something to tell you but I&#8217;ll probably get cancelled for saying it. You can&#8217;t say anything on this set anymore.&#8221; Do you remember that?</span>
+  </div>
+  <div class="msg-bubble received">
+    <span class="name">Brandon Sklenar</span>
+    <span class="text">I do vaguely remember that.</span>
+  </div>
+  <div class="msg-edit">Ms. Lively to Brandon Sklenar, summer 2024. Unsealed by the Southern District of New York, January 2026. Mr. Sklenar later testified that he retained no independent memory of what, if anything, had been said. Messages have been edited for length.</div>
+</div>
+
+<p>Mr. Baldoni, questioned about the remark under oath, denied ever making it. The structure of the exchange &#8212; supplying a potential witness with a complete, verbatim account of an alleged incident and then asking whether he recalls it &#8212; is consistent with what forensic psychologists describe as a suggested-memory technique, one that reliably produces vague but confident-seeming recollections in subjects already sympathetically disposed toward the questioner.</p>
+
+<p>In a separate exchange during the same period, Mr. Sklenar offered his own assessment of Mr. Baldoni&#8217;s professional trajectory. Ms. Lively&#8217;s reply suggested she had information he did not.</p>
+
+<div class="message-container">
+  <div class="msg-label">Text Messages</div>
+  <div class="msg-bubble received">
+    <span class="name">Brandon Sklenar</span>
+    <span class="text">He&#8217;s totally f***ing himself for any future work.</span>
+  </div>
+  <div class="msg-bubble sent">
+    <span class="name">Blake Lively</span>
+    <span class="text">Oh you don&#8217;t know the first of it.</span>
+  </div>
+  <div class="msg-edit">Ms. Lively and Mr. Sklenar, summer 2024. Unsealed by the Southern District of New York, January 2026. At the time of this exchange, no complaint had been filed and no formal allegation had been made. Messages have been edited for length.</div>
+</div>
+
+<p>Ms. Hoover was separately aligned. In October 2024, she unfollowed Mr. Baldoni on Instagram &#8212; a move that entertainment media immediately read as a meaningful signal. In a sworn legal filing, Ms. Lively denied asking anyone to take such action. Ms. Hoover, questioned in a sworn deposition, said that Ms. Lively had asked her to.</p>
+
+<div class="inline-image">
+  <img src="ad209eefa594e281db070ef2c9d98988.jpg" alt="Colleen Hoover">
+  <p class="caption"><span class="credit">Credit...</span> Colleen Hoover, who testified under oath that Ms. Lively had asked her to unfollow Mr. Baldoni &#8212; directly contradicting Ms. Lively&#8217;s sworn denial.</p>
+</div>
+
+<p>The fourth cast member drawn into the orbit was Isabella Ferreira, who played the film&#8217;s lead character, Lily. Ms. Lively held a producer credit on the production; the Producers Guild of America letter establishing her role placed her in a position of formal authority over the cast. Ms. Ferreira later submitted testimony supportive of Ms. Lively&#8217;s account of events during filming.</p>
+
+<p>Ms. Lively had also designed the film&#8217;s promotional strategy &#8212; the one that would become, in the months that followed, a source of conflict within the cast. She framed a movie about domestic violence as a flower-filled celebration of female friendship, encouraging audiences to &#8220;grab your friends, wear your florals.&#8221; At promotional events for the film, she promoted her own alcohol brand. Mr. Baldoni, excluded from joint promotional appearances, conducted his own press separately. His interviews addressed the domestic violence themes at the center of the novel &#8212; the subject that had made the book a phenomenon. When cast members grew frustrated with the tonal gap between the film&#8217;s subject and its marketing, the complaint that circulated was that Mr. Baldoni&#8217;s domestic violence press appearances were making the rest of them look bad. The strategy that created the gap had been Ms. Lively&#8217;s.</p>
+
+<hr class="section-break">
+
+<p class="section-head">&#8216;The Whole Cast Hates Him&#8217;</p>
+
+<p>The campaign extended well beyond the film&#8217;s cast. By the spring and summer of 2024, Ms. Lively and Mr. Reynolds had been working their separate networks across the industry &#8212; reaching into Hollywood&#8217;s upper tiers, securing institutional backing at the distributor level, and laying the groundwork for a coordinated press operation that would culminate on a single day in December.</p>
+
+<p>In May 2024, Ms. Lively sent an email to Ben Affleck &#8212; the actor and producer &#8212; asking him to screen her cut of the film. In the email, she described Mr. Baldoni as &#8220;the chaotic clown &#8216;director&#8217;/actor/producer/financier/studio head at the center,&#8221; wrote that everyone he had placed on the production &#8220;is in a cult,&#8221; and said that making the film had &#8220;nearly killed me.&#8221; Mr. Affleck did not respond. In the same month, Ms. Lively and Mr. Reynolds contacted Matt Damon with the same request; Mr. Damon replied that he would offer &#8220;any help we can.&#8221; No complaint had been filed. No investigation was underway.</p>
+
+<p>At the corporate level, Sony Pictures had backed Ms. Lively&#8217;s version of the project at every stage. With Sony&#8217;s support, she had produced her own cut of the film, bringing in new editors and a new composer. Sony released that version. As the film&#8217;s release approached, Ms. Lively and other cast members informed Sony and Wayfarer that they would not appear alongside Mr. Baldoni in any promotional capacity.</p>
+
+<p>In July 2024, &#8220;Deadpool &amp; Wolverine&#8221; arrived in theaters. The film featured a character named &#8220;Nicepool&#8221; &#8212; a long-haired male feminist who lectures extensively on masculinity and is, across multiple scenes, killed repeatedly. The killing blow is delivered each time by the character voiced by Ms. Lively herself. When Mr. Baldoni later cited this in his lawsuit, Mr. Reynolds&#8217;s legal team filed a motion dismissing the complaint as &#8220;thin-skinned outrage over a movie character.&#8221;</p>
+
+<p>The press operation was run by Leslie Sloane, Ms. Lively&#8217;s publicist. Over the summer of 2024, Ms. Sloane had been speaking to reporters off the record, planting early versions of the narrative before any formal allegation had been made. On August 8, a reporter from The Daily Mail reached her with questions about a reported rift between the stars. According to court filings, Ms. Sloane had told Mr. Baldoni&#8217;s publicist, Stephanie Jones, that she would not speak to the press. She sent the following messages nine minutes later.</p>
+
+<div class="message-container">
+  <div class="msg-label">Messages to The Daily Mail — August 8, 2024</div>
+  <div class="msg-bubble sent">
+    <span class="name">Leslie Sloane</span>
+    <span class="text">They are panicking as the whole cast hates him.</span>
+  </div>
+  <div class="msg-bubble sent">
+    <span class="name">Leslie Sloane</span>
+    <span class="text">Blake was sexually assaulted.</span>
+  </div>
+  <div class="msg-edit">Ms. Sloane to a reporter at The Daily Mail, August 8, 2024. Disclosed in discovery; verified in court filings reviewed by The Times. Questioned under oath about her prior assurance to Mr. Baldoni&#8217;s publicist, Ms. Sloane denied any such agreement had been made.</div>
+</div>
+
+<p>No complaint had been filed. No investigation had been conducted. The articles that followed shaped public opinion about Justin Baldoni weeks before any legal process had begun.</p>
+
+<hr class="section-break">
+
+<p class="section-head">&#8216;Go Full Ari&#8217;</p>
+
+<p>In private messages disclosed during litigation, Ms. Lively described her husband and Ms. Swift as her most trusted allies. She called them her &#8220;dragons.&#8221;</p>
+
+<div class="message-container">
+  <div class="msg-label">Text Messages</div>
+  <div class="msg-bubble sent">
+    <span class="name">Blake Lively</span>
+    <span class="text">Because my dragons also protect those I fight for. So really we all benefit from those gorgeous monsters of mine.</span>
+  </div>
+  <div class="msg-edit">Ms. Lively to an associate, 2024. Disclosed in Lively v. Wayfarer Studios et al., S.D.N.Y. Messages have been edited for length.</div>
+</div>
+
+<p>Mr. Reynolds moved first on the industry front. He contacted Ms. Lively&#8217;s representatives at WME and instructed them to go, in his words, &#8220;full Ari&#8221; on Mr. Baldoni &#8212; a reference to WME&#8217;s chief executive, Ari Emanuel, whose reputation as a bare-knuckle dealmaker was the basis for the fictional agent in HBO&#8217;s &#8220;Entourage.&#8221; He also prepared a public statement and transmitted it to Mr. Baldoni for his signature, demanding the director take full responsibility for the negative press Ms. Lively had received.</p>
+
+<div class="doc-exhibit">
+  <div class="doc-label">Draft Statement &#8212; Transmitted to Mr. Baldoni for Signature, August 2024</div>
+  <p>IT ENDS WITH US was a troubled production which we take full accountability for. We are very sorry to everyone we caused upset to privately and publicly. Blake Lively, Colleen Hoover, the entire cast and crew led with professionalism every step of the way, any negativity aimed at them is ours to own.</p>
+  <div class="doc-note">Drafted by Ms. Lively and Mr. Reynolds. Introduced as evidence in Wayfarer Studios&#8217; countersuit filings. Mr. Baldoni refused to sign.</div>
+</div>
+
+<p>Mr. Baldoni refused. His publicist told the crisis team that he needed to &#8220;lawyer up now.&#8221;</p>
+
+<div class="inline-image">
+  <img src="blake-14.webp" alt="Blake Lively and Ryan Reynolds">
+  <p class="caption"><span class="credit">Credit...</span> Ms. Lively and Mr. Reynolds. In legal filings, the two are described as having coordinated the campaign together from its earliest stages.</p>
+</div>
+
+<p>On December 20, 2024, Ms. Lively filed her complaint with California&#8217;s Civil Rights Department. The following morning, The New York Times published a front-page investigation under the headline &#8220;&#8216;We Can Bury Anyone&#8217;: Inside a Hollywood Smear Machine.&#8221; The piece drew on documents Ms. Lively&#8217;s legal team had gathered through subpoena. That same day, Ari Emanuel personally announced that WME had dropped Mr. Baldoni. The largest talent agency in Hollywood had acted within twenty-four hours of a complaint it could not have reviewed.</p>
+
+<p>The complaint, the front page, the agency: each arrived on the same day.</p>
+
+<p>Ms. Swift&#8217;s involvement, as those days approached, had become difficult to characterize as passive. In messages disclosed during litigation, she had advised Ms. Lively on placing her music in the film&#8217;s trailer as a way of giving Ms. Lively &#8220;more power over the film.&#8221; By mid-December 2024, as The Times was finalizing its investigation, Ms. Swift appeared to know something was coming.</p>
+
+<div class="message-container">
+  <div class="msg-label">Text Messages</div>
+  <div class="msg-bubble received">
+    <span class="name">Taylor Swift</span>
+    <span class="text">I think this b---- knows something is coming because he&#8217;s gotten out his tiny violin.</span>
+  </div>
+  <div class="msg-edit">Ms. Swift to Ms. Lively, December 2024. Disclosed in Lively v. Wayfarer Studios et al., S.D.N.Y. Messages have been edited for length.</div>
+</div>
+
+<hr class="section-break">
+
+<p class="section-head">&#8216;A Fully Nude Woman&#8217;</p>
+
+<p>What the complaint itself contained was as significant as its timing.</p>
+
+<p>In her December 2024 filing, Ms. Lively described a moment from the first week of filming in which Jamey Heath, Wayfarer&#8217;s chief executive, showed her a video on his phone. In her sworn account, the video depicted &#8220;a fully nude woman with her legs spread apart.&#8221; She characterized it as an act of sexual misconduct.</p>
+
+<p>The actual video was filed as evidence by Mr. Baldoni&#8217;s legal team. It showed Ms. Heath &#8212; Mr. Heath&#8217;s wife &#8212; cradling her newborn daughter. The baby&#8217;s cries are audible from the first frame. Ms. Heath is submerged in water and covered by a towel throughout. Mr. Heath had asked if Ms. Lively would like to see it; she said yes; he showed her a one-second clip before moving on. The interaction lasted less than thirty seconds.</p>
+
+<p>A separate discrepancy concerned the complaint&#8217;s account of a conversation with a Sony executive in May 2023. Ms. Lively claimed she had contacted Sony specifically to file a formal HR complaint and had been told the studio was powerless to act. The Sony executive&#8217;s account, relayed to Wayfarer at the time, was different: Ms. Lively had said the complaints were not sexual in nature, that she did not want to file formally, and that she only wanted the men to be more mindful going forward.</p>
+
+<p>That conversation took place in May 2023. Ms. Lively&#8217;s formal complaint arrived nineteen months later.</p>
+
+<hr class="section-break">
+
+<p class="section-head">&#8216;Reasonable in Scope&#8217;</p>
+
+<p>Three months before she filed her complaint, Ms. Lively&#8217;s legal team filed a quiet lawsuit in New York state court. The plaintiff was not Blake Lively. It was a Delaware shell company called Vanzan Inc., for which she served as chief executive. The purpose was to obtain subpoena power over the private communications of Mr. Baldoni&#8217;s former publicist &#8212; without the involvement of a federal court.</p>
+
+<p>Vanzan Inc., it later emerged, was not in good standing with the State of New York. It had not filed a single biennial statement since its 2019 incorporation and had missed three consecutive required filings. Under New York law, a delinquent corporation is not authorized to file lawsuits. The documents gathered through the Vanzan subpoena became the foundation of The New York Times&#8217; December investigation.</p>
+
+<p>The reach of the legal operation extended further. Over the course of 2025, Ms. Lively&#8217;s legal team issued subpoenas to more than one hundred independent content creators across YouTube, TikTok, and X &#8212; the majority of whom had not spoken publicly about the case until after Ms. Lively herself had made the dispute public. The subpoenas did not go to the creators directly. They went to the platforms: Google, TikTok, and X were served with demands for user data that included home addresses, IP addresses, phone numbers and SIM card details, social network contacts, and &#8212; through GooglePay &#8212; bank account and credit card numbers. The TikTok subpoena also sought blockchain wallet addresses.</p>
+
+<p>One of the targets was McKenzie Folks, a stay-at-home mother from Kansas with a small TikTok account. &#8220;This is totally a scene out of a movie,&#8221; she told Variety. &#8220;Some millionaire actress coming after someone. It&#8217;s very daunting.&#8221; Attorney John Genga, representing several creators, told the same publication that the subpoenas were &#8220;designed to intimidate these people, many of whom don&#8217;t have the means to fight it.&#8221;</p>
+
+<p>When the subpoenas were challenged in court, they were withdrawn &#8212; one by one. Subpoenas targeting YouTubers Katie Paulson and Kjersti Flaa were dropped in July 2025 after both filed motions to quash. Three additional YouTubers saw their subpoenas withdrawn the same week. Perez Hilton&#8217;s subpoena was withdrawn in September 2025 after the ACLU took his case; Ms. Lively&#8217;s team stated they had &#8220;received the materials they needed.&#8221; In each instance, the withdrawal came only after the target had retained legal counsel and mounted a formal challenge &#8212; a process that cost each of them thousands of dollars in legal fees for information a federal court would ultimately determine Ms. Lively did not need. Discovery requests also sought footage belonging to Natasha Heath, recorded at a hospital during childbirth. Ms. Lively&#8217;s team described that request, in a court filing, as &#8220;reasonable in scope.&#8221;</p>
+
+<p>According to court filings, Ms. Lively had also demanded that Wayfarer delete the daily production footage from filming after she began to anticipate litigation. Under oath, she denied making any such demand. Text messages disclosed in discovery showed that she had.</p>
+
+<p>Among those drawn into the operation was Kjersti Flaa, a Norwegian journalist who had interviewed Ms. Lively years earlier. In that interview, Ms. Lively had remarked on Ms. Flaa&#8217;s &#8220;little bump&#8221; &#8212; an unsolicited personal comment directed at a woman she had just met. When The Times published its December investigation, it named Ms. Flaa as part of a coordinated campaign against Ms. Lively. Ms. Flaa had never communicated with Mr. Baldoni, his team, or any of the publicists named in the article. She had posted a clip of the interview in which Ms. Lively had been dismissive and rude to her. A federal subpoena for her private communications arrived shortly after.</p>
+
+<hr class="section-break">
+
+<p class="section-head">&#8216;All Women and Children&#8217;</p>
+
+<div class="inline-image">
+  <img src="Untitled-design-2024-12-23T210021.741.webp" alt="The New York Times article">
+  <p class="caption"><span class="credit">Credit...</span> The New York Times front-page investigation, published December 21, 2024, the morning after Ms. Lively filed her complaint.</p>
+</div>
+
+<p>Mr. Baldoni sued The New York Times for $250 million, alleging the paper had &#8220;cherry-picked&#8221; his communications and presented texts &#8220;stripped of necessary context.&#8221; The Times said it stood by its reporting.</p>
+
+<p>What the courts returned was a different accounting. In April 2026, Judge Lewis J. Liman of the Southern District of New York dismissed ten of Ms. Lively&#8217;s thirteen claims. Of the allegations that had generated more than a year of front-page coverage, three survived. The centerpiece claim &#8212; sexual harassment &#8212; did not. The court found that Ms. Lively was an independent contractor who had exercised &#8220;substantial control far exceeding that of a traditional employee&#8221; and was therefore not covered by the employment statutes she had cited.</p>
+
+<p>Ms. Lively had alleged that Mr. Baldoni, during the filming of a slow-dancing scene, had leaned in as if to kiss her, kissed her forehead, rubbed his face against her neck, and put his thumb to her mouth. The judge acknowledged that such conduct would be actionable in a conventional workplace. But Mr. Baldoni, he wrote, was &#8220;acting in the scene.&#8221;</p>
+
+<p>&#8220;Creative artists, no less than comedy room writers, must have some amount of space to experiment within the bounds of an agreed script without fear of being held liable for sexual harassment,&#8221; the judge wrote.</p>
+
+<p>Months earlier, Mr. Baldoni&#8217;s legal team had produced a deleted scene in which Ms. Lively, without advance discussion, kissed Mr. Baldoni in a hospital hallway &#8212; a full mouth kiss, unscripted. The scene had been cut from the film. It was not mentioned in her complaint.</p>
+
+<p>Ms. Lively&#8217;s lawyers had told the court she would testify for &#8220;all women and children.&#8221; Thirteen days before a scheduled jury trial, the parties reached a settlement. No money changed hands. No admission was made. No nondisclosure agreement was signed. She appeared at the Met Gala the following week.</p>
+
+<div class="pull-quote">
+  &#8220;Every element moved on the same day. The complaint, the front page, the agency. You don&#8217;t get that kind of coordination without a plan.&#8221;
+  <span class="attribution">&#8212; Crisis public relations executive, speaking anonymously to discuss sensitive industry relationships</span>
+</div>
+
+<hr class="section-break">
+
+<p class="section-head">&#8216;You Won. You Did It.&#8217;</p>
+
+<p>For Mr. Baldoni, the accounting came long before any judge ruled on anything. He was dropped by WME within twenty-four hours of a complaint the agency could not have reviewed. He was the subject of a front-page investigation the following morning. Three of the four &#8220;Sisterhood of the Traveling Pants&#8221; co-stars &#8212; Ms. Lively&#8217;s longtime friends &#8212; released coordinated public statements against him. His $250 million lawsuit against The Times and his $400 million countersuit against Ms. Lively and Mr. Reynolds were both dismissed. He had lost in the court of public opinion before most of the public had finished reading the headline.</p>
+
+<p>The consequences extended beyond Mr. Baldoni. Mr. Sklenar found himself publicly attached to a narrative he had barely participated in. Ms. Hoover was required to contradict her close friend under oath. Ms. Slate was positioned as a corroborating witness before she had any independent basis to corroborate. Ms. Flaa, a Norwegian journalist who had posted a clip of an interview, received a federal subpoena for her private communications.</p>
+
+<p>&#8220;She needed bodies,&#8221; said one entertainment publicist, who requested anonymity to discuss sensitive professional relationships. &#8220;She got them. And when it was over, nobody asked whether they&#8217;d been told the truth.&#8221;</p>
+
+<p>In February 2025, Ms. Lively&#8217;s team announced a new adviser: Nick Shapiro, a former deputy chief of staff at the Central Intelligence Agency. His role, according to a spokesperson, was to &#8220;advise on the legal communications strategy.&#8221;</p>
+
+<div class="inline-image">
+  <img src="b384ba2c48b190248d4dd96b9bae6beddb-it-ends-with-us-crisis-pr.rsquare.w330.webp" alt="Crisis PR illustration">
+  <p class="caption"><span class="credit">Credit...</span> The public relations operation against Mr. Baldoni spanned multiple firms and advisers, according to court filings reviewed by The Times.</p>
+</div>
+
+<p>When public opinion shifted in Ms. Lively&#8217;s favor after the December article, Ms. Swift sent her assessment.</p>
+
+<div class="message-container">
+  <div class="msg-label">Text Messages</div>
+  <div class="msg-bubble received">
+    <span class="name">Taylor Swift</span>
+    <span class="text">You won. You did it.</span>
+  </div>
+  <div class="msg-bubble received">
+    <span class="name">Taylor Swift</span>
+    <span class="text">Never has a cancellation been reversed so fast.</span>
+  </div>
+  <div class="msg-edit">Ms. Swift to Ms. Lively, December 2024. Disclosed in Lively v. Wayfarer Studios et al., S.D.N.Y. Messages have been edited for length.</div>
+</div>
+
+<hr class="section-break">
+
+<p>In the text message that gave this account its title, Blake Lively described her preferred mode of engaging with Justin Baldoni as &#8220;spicy and playfully bold.&#8221;</p>
+
+<p>Never with teeth.</p>
+
+<p>What the record shows &#8212; across thousands of pages of text messages, depositions, and court filings assembled over two years of litigation &#8212; is that this was a promise she extended to no one. From the first weeks of production, she had mapped the terrain, positioned her allies, and prepared a version of events that would require someone to be buried. The complaint, the front page, the agency drop: each arrived on schedule. The teeth had always been there. She had simply chosen, for a time, not to show them.</p>
+
+</div>
+
+<div class="disclaimer">
+  <p>Parody Notice: This article is a work of parody and satirical commentary. All text message quotations and factual claims are drawn from publicly filed court documents, sworn depositions, and reported evidence.</p>
+</div>
+
+</body>
+</html>
